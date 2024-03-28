@@ -21,8 +21,6 @@ export interface IOrder {
     total: number;
 }
 
-export type OrderForm = Omit<IOrder, "total" | "items">;
-
 export interface IOrderResult {
     id: string;
     total: number;
