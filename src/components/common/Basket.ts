@@ -3,7 +3,12 @@ import {IBasket, IProduct} from "../../types";
 import {EventEmitter} from "../base/events";
 import {createElement, ensureElement} from "../../utils/utils";
 
-class Basket extends View<IBasket> {
+interface IBasketView {
+    items: HTMLElement[];
+    total: number;
+}
+
+export class Basket extends View<IBasketView> {
     protected _list: HTMLElement;
     protected _total: HTMLElement;
     protected _button: HTMLElement;

@@ -16,7 +16,9 @@ export class Modal extends View<IModalData> {
         this._button = ensureElement<HTMLButtonElement>('.modal__close', container);
         this._content = ensureElement('.modal__content', container);
 
-
+        this._button.addEventListener('click', this.close.bind(this));
+        this.container.addEventListener('click', this.close.bind(this));
+        this._content.addEventListener('click', (event) => event.stopPropagation());
     }
 
     set content(value: HTMLElement) {
@@ -32,6 +34,12 @@ export class Modal extends View<IModalData> {
         this.container.classList.remove('modal_active');
         this.content = null;
         this.events.emit('modal:close');
+    }
+
+    render(data: IModalData): HTMLElement {
+        super.render(data);
+        this.open();
+        return this.container;
     }
 
 }

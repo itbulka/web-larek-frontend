@@ -2,7 +2,7 @@ import {Form} from "./common/Form";
 import {IOrder} from "../types";
 import {EventEmitter} from "./base/events";
 
-class Contact extends Form<IOrder> {
+export class Contact extends Form<IOrder> {
     constructor(events: EventEmitter, container: HTMLFormElement) {
         super(events, container);
     }

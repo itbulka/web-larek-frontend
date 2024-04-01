@@ -6,22 +6,26 @@ export abstract class Component<T> {
         element.classList.toggle(className);
     }
 
-    setHidden(element: HTMLElement) {
+    protected setHidden(element: HTMLElement) {
         element.style.display = 'none';
     }
 
-    setVisible(element: HTMLElement) {
+    protected setVisible(element: HTMLElement) {
         element.style.removeProperty('display');
     }
 
-    setText(element: HTMLElement, value: string) {
-        element.textContent = value
+    protected setText(element: HTMLElement, value: unknown) {
+        if (element) {
+            element.textContent = String(value);
+        }
     }
 
-    setImage(element: HTMLImageElement, src: string, alt?: string) {
+    protected setImage(element: HTMLImageElement, src: string, alt?: string) {
         if (element) {
             element.src = src;
-            element.src = alt ?? '';
+            if (alt) {
+                element.alt = alt;
+            }
         }
     }
 

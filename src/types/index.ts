@@ -12,7 +12,15 @@ export interface IBasket {
     total: number;
 }
 
-export type PaymentMethod = 'cash' | 'card';
+export const colorCategory: Map<string, string> = new Map([
+    ['софт-скил', 'soft'],
+    ['другое', 'other'],
+    ['дополнительное', 'additional'],
+    ['кнопка', 'button'],
+    ['хард-скил', 'hard']
+])
+
+export type PaymentMethod = 'cash' | 'online';
 
 export interface IOrder {
     address: string;

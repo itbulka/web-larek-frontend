@@ -9,7 +9,7 @@ interface IPageData {
     locked: boolean;
 }
 
-class Page extends View<IPageData> {
+export class Page extends View<IPageData> {
     protected _counter: HTMLElement;
     protected _catalog: HTMLElement;
     protected _wrapper: HTMLElement;

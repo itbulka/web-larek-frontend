@@ -3,7 +3,7 @@ import {IOrderResult} from "../../types";
 import {EventEmitter} from "../base/events";
 import {ensureElement} from "../../utils/utils";
 
-class Success extends View<IOrderResult> {
+export class Success extends View<IOrderResult> {
     protected _total: HTMLElement;
     protected _button: HTMLElement;
 

@@ -13,7 +13,7 @@ export class AppData {
 
     order: IOrder = {
         address: '',
-        payment: 'card',
+        payment: 'online',
         email: '',
         phone: '',
         items: [],
@@ -28,6 +28,7 @@ export class AppData {
     }
 
     setItems(items: IProduct[]) {
+        console.log(items);
         this.items = items;
         this.events.emit('items:change', this.items);
     }
@@ -39,7 +40,7 @@ export class AppData {
 
     // Проверить есть ли товар в корзине
     inBasket(item: IProduct): boolean {
-        return this.items.includes(item);
+        return this.basket.items.includes(item.id);
     }
 
     // Добавить в корзину
@@ -71,6 +72,8 @@ export class AppData {
             this.order[field] = value;
         }
 
+        console.log(this.order)
+
         if (this.order.payment && this.validationField()) {
             this.order.items = this.basket.items;
             this.order.total = this.basket.total;
@@ -94,6 +97,8 @@ export class AppData {
         this.formErrors = errors;
         this.events.emit('formErrors:change', this.formErrors);
         return Object.keys(errors).length === 0;
+
+        console.log(errors);
     }
 
 }
