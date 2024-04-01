@@ -37,6 +37,11 @@ const contactsForm = new Contact(events, cloneTemplate(contactsTemplate));
 
 const success = new Success(events, cloneTemplate(successTemplate));
 
+events.on('order:result', () => {
+    appData.clearBasket();
+    modal.close();
+})
+
 events.on('contacts:submit', () => {
     api.createOrder(appData.order)
         .then(result => {
