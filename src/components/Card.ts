@@ -48,5 +48,9 @@ class Card extends Component<IProduct> {
         this.setText(this._category, value);
     }
 
+    set button(value: string) {
+        this.setText(this._button, value);
+    }
+
 
 }

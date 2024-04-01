@@ -9,7 +9,7 @@ export interface IProduct {
 
 export interface IBasket {
     items: string[];
-    totalPrice: number;
+    total: number;
 }
 
 export type PaymentMethod = 'cash' | 'card';
