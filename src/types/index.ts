@@ -12,14 +12,18 @@ export interface IBasket {
     totalPrice: number;
 }
 
+export type PaymentMethod = 'cash' | 'card';
+
 export interface IOrder {
     address: string;
-    status: string;
+    payment: PaymentMethod;
     email: string;
     phone: string;
     items: string[];
     total: number;
 }
+
+export type OrderForm = Omit<IOrder, 'total' | 'items'>
 
 export interface IOrderResult {
     id: string;
