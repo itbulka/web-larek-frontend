@@ -1,6 +1,6 @@
 import {View} from "../base/View";
 import {IBasket, IProduct} from "../../types";
-import {EventEmitter} from "../base/events";
+import {EventEmitter} from "../base/Events";
 import {createElement, ensureElement} from "../../utils/utils";
 
 interface IBasketView {

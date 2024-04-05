@@ -1,6 +1,6 @@
 import {View} from "../base/View";
 import {IOrderResult} from "../../types";
-import {EventEmitter} from "../base/events";
+import {EventEmitter} from "../base/Events";
 import {ensureElement} from "../../utils/utils";
 
 export class Success extends View<IOrderResult> {

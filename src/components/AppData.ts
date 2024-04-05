@@ -1,5 +1,5 @@
 import {IBasket, IOrder, IProduct, OrderForm, PaymentMethod} from "../types";
-import {EventEmitter} from "./base/events";
+import {EventEmitter} from "./base/Events";
 
 export type FormErrors = Partial<Record<keyof IOrder, string>>;
 

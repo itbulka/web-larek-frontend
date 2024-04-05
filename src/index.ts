@@ -1,7 +1,7 @@
 import './scss/styles.scss';
 import {WebLarekApi} from "./components/WebLarekApi";
 import {API_URL, CDN_URL} from "./utils/constants";
-import {EventEmitter} from "./components/base/events";
+import {EventEmitter} from "./components/base/Events";
 import {cloneTemplate, ensureElement} from "./utils/utils";
 import {Page} from "./components/Page";
 import {Modal} from "./components/common/Modal";

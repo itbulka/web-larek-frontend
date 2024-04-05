@@ -1,6 +1,6 @@
 import {Form} from "./common/Form";
 import {IOrder, OrderForm, PaymentMethod} from "../types";
-import {EventEmitter} from "./base/events";
+import {EventEmitter} from "./base/Events";
 import {ensureElement} from "../utils/utils";
 
 export class Order extends Form<OrderForm> {

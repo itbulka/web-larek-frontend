@@ -1,5 +1,5 @@
 import {View} from "../base/View";
-import {EventEmitter} from "../base/events";
+import {EventEmitter} from "../base/Events";
 import {ensureElement} from "../../utils/utils";
 
 interface IModalData {
