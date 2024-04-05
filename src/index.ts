@@ -68,7 +68,9 @@ events.on('order:submit', () => {
 events.on('formErrors:change', (error: FormErrors) => {
     const {address, payment, email, phone} = error;
     orderForm.valid = !address && !payment;
+    orderForm.errors = Object.values({address, payment}).filter(i => !!i).join('; ');
     contactsForm.valid = !email && !phone;
+    contactsForm.errors = Object.values({email, phone}).filter(i => !!i).join('; ');
 })
 
 events.on(/^contacts\..*:change/, (data: {inputName: keyof OrderForm, value: string}) => {

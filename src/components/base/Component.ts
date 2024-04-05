@@ -2,8 +2,8 @@ export abstract class Component<T> {
     protected constructor(protected container: HTMLElement) {
     }
 
-    toggleClass(element: HTMLElement, className: string){
-        element.classList.toggle(className);
+    toggleClass(element: HTMLElement, className: string, force?: boolean) {
+        element.classList.toggle(className, force);
     }
 
     protected setHidden(element: HTMLElement) {
